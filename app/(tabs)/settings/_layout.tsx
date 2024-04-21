@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Platform, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Stack } from "expo-router";
 import Colors from "@/constants/Colors";
@@ -10,9 +10,10 @@ const Layout = () => {
         name="index"
         options={{
           title: "Settings",
-          headerLargeTitle: true,
+          headerLargeTitle: Platform.OS === "ios" ? true : false,
           headerShadowVisible: false,
-          // headerBlurEffect: "regular",
+          headerBlurEffect: "regular",
+          headerTransparent: true,
           headerStyle: {
             backgroundColor: Colors.background,
           },
